@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人物表情與情緒 - 繪圖學習指南</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .unit {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .exercise {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .exercise input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+        .exercise label {
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .exercise input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="index.html" class="back-link">← 返回首頁</a>
+    <h1>人物表情與情緒</h1>
+    <p>本單元將帶你深入臉部肌肉與五官的細節，學習如何描繪出充滿情感與個性的角色表情。</p>
+    
+    <div class="unit">
+        <h2>基礎臉部結構與比例</h2>
+        <div class="exercise">
+            <input type="checkbox" id="face-1">
+            <label for="face-1">頭部與臉部比例：練習不同角度下的臉部結構</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="face-2">
+            <label for="face-2">臉部肌肉：了解主要肌肉的功能與位置</label>
+        </div>
+    </div>
+
+    <div class="unit">
+        <h2>表情五官拆解練習</h2>
+        <div class="exercise">
+            <input type="checkbox" id="emotion-1">
+            <label for="emotion-1">眼睛與眉毛：練習驚訝、憤怒、悲傷等組合</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="emotion-2">
+            <label for="emotion-2">嘴巴與下巴：練習快樂、恐懼、不屑等組合</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="emotion-3">
+            <label for="emotion-3">五官協調：觀察五官如何共同作用以表達情緒</label>
+        </div>
+    </div>
+    
+    <div class="unit">
+        <h2>綜合表情與情感表現</h2>
+        <div class="exercise">
+            <input type="checkbox" id="advanced-1">
+            <label for="advanced-1">通用情緒練習：繪製喜、怒、哀、樂四種基本情緒</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="advanced-2">
+            <label for="advanced-2">混合情緒：挑戰繪製驚喜、苦笑、困惑等複雜表情</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="advanced-3">
+            <label for="advanced-3">動態表情：描繪表情變化瞬間的肌肉動態</label>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // 載入 localStorage 中的狀態
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id) === 'true';
+                checkbox.checked = isChecked;
+            });
+
+            // 監聽 checkbox 的變化並存檔到 localStorage
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    localStorage.setItem(e.target.id, e.target.checked);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

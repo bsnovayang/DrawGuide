@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>繪圖學習輔助網頁</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f0f2f5;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #7f8c8d;
+            font-size: 1.2em;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+        .card h2 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .card p {
+            margin: 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>繪圖學習輔助網頁</h1>
+        <p>歡迎來到你的個人繪圖學習空間。請選擇你想練習的主題，開始你的繪畫之旅吧！</p>
+    </header>
+
+    <div class="container">
+        
+        <a href="anatomy.html" class="card">
+            <h2>人體結構拆解繪畫指南</h2>
+            <p>透過連接點拆解人體，逐步掌握複雜的骨骼與肌肉結構。</p>
+        </a>
+
+        <a href="perspective.html" class="card">
+            <h2>基礎線條與透視</h2>
+            <p>學習繪圖的基本功，掌握透視原理與線條的運用。</p>
+        </a>
+
+        <a href="lighting.html" class="card">
+            <h2>光影與素描技巧</h2>
+            <p>了解光源、陰影的關係，提升作品的立體感與層次。</p>
+        </a>
+
+        <a href="color-theory.html" class="card">
+            <h2>色彩學與上色技巧</h2>
+            <p>探索色彩理論，學習如何搭配與運用色彩。</p>
+        </a>
+
+        <a href="expression.html" class="card">
+            <h2>人物表情與情緒</h2>
+            <p>深入學習臉部表情的細微變化，讓角色更具情感。</p>
+        </a>
+
+        <a href="dynamic-poses.html" class="card">
+            <h2>動態與姿勢設計</h2>
+            <p>掌握動態原理，創造出更具生命力的流暢姿勢。</p>
+        </a>
+
+    </div>
+
+</body>
+</html>

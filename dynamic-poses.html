@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動態與姿勢設計 - 繪圖學習指南</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .unit {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .exercise {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .exercise input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+        .exercise label {
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .exercise input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="index.html" class="back-link">← 返回首頁</a>
+    <h1>動態與姿勢設計</h1>
+    <p>本單元將帶你從重心的概念出發，逐步掌握動態線條的運用，讓你的角色充滿生命力與動感。</p>
+    
+    <div class="unit">
+        <h2>重心與平衡</h2>
+        <div class="exercise">
+            <input type="checkbox" id="pose-1">
+            <label for="pose-1">重心線：學習如何找到並繪製重心線</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="pose-2">
+            <label for="pose-2">支撐點：了解角色如何透過不同部位支撐重量</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="pose-3">
+            <label for="pose-3">平衡練習：繪製各種平衡與不平衡的姿勢</label>
+        </div>
+    </div>
+
+    <div class="unit">
+        <h2>動態線條與節奏</h2>
+        <div class="exercise">
+            <input type="checkbox" id="dynamic-1">
+            <label for="dynamic-1">動態線 (Line of Action)：練習用曲線概括動作能量</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="dynamic-2">
+            <label for="dynamic-2">S形與C形曲線：應用在人體上，創造流暢美感</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="dynamic-3">
+            <label for="dynamic-3">節奏與韻律：繪製從靜態到動態的連續動作</label>
+        </div>
+    </div>
+    
+    <div class="unit">
+        <h2>應用與進階姿勢</h2>
+        <div class="exercise">
+            <input type="checkbox" id="application-1">
+            <label for="application-1">肢體語言：練習繪製不同情緒與個性的姿勢</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="application-2">
+            <label for="application-2">動態分析：拆解跑步、跳躍等複雜動作的關鍵幀</label>
+        </div>
+        <div class="exercise">
+            <input type="checkbox" id="application-3">
+            <label for="application-3">服裝與布料動態：讓衣服的褶皺符合身體動作</label>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            // 載入 localStorage 中的狀態
+            checkboxes.forEach(checkbox => {
+                const isChecked = localStorage.getItem(checkbox.id) === 'true';
+                checkbox.checked = isChecked;
+            });
+
+            // 監聽 checkbox 的變化並存檔到 localStorage
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    localStorage.setItem(e.target.id, e.target.checked);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
